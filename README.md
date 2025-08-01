@@ -1,6 +1,6 @@
 ![bagRNA_logo](bagRNA_logo.png)
-**bagRNA** is an ncRNA-aware genome annotation pipeline for eukaryotic organisms. It is designed to produce comprehensive, functionally annotated GFF3 files — even for users without extensive bioinformatics expertise.
-
+**bagRNA** is a user-frienfly ncRNA-aware genome annotation pipeline for eukaryotic organisms. It is designed to predict, correct, classify and assign function to gene models, all in one go!
+Take a look at all the steps !
 ![bagRNA pipeline](bagRNA_pipeline.png)
 
 The pipeline integrates:
