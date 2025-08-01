@@ -68,15 +68,15 @@ bagRNA arguments
 
 🗂 Required Inputs
 
-| Argument                                                         | Description                                             | Tips and specifics                                                                |
-| ----------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Argument                                  | Description                                             | Tips and specifics                                                                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `--input_fasta`                           | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
 | `--prot_evidence`                         | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
 | `--busco_lineage`                         | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
 | `--Conditions`                            | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
 | `--mikado_config`                         | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
 | `--scoring`                               | Mikado scoring config (e.g., `scerevisiae.yaml`)        | Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)                                   |
-| `--submission_template `                  | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
+| `--submission_template`                   | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
 | `--species`                               | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
 
 🧠 Choose one of the two following options 
@@ -88,8 +88,8 @@ bagRNA arguments
 
 📥 Optional Inputs
 
-| Argument              | Description                             |
-| --------------------- | --------------------------------------- |
+| Argument              | Description                             | Tips and specifics |
+| --------------------- | --------------------------------------- | ------------------ |
 | `--lifted_annotation` | Liftoff/Lifton GFF annotation           |
 | `--GeneMark_PATH`     | Path to GeneMark executable             |
 | `--databases`         | Path to functional annotation databases |
