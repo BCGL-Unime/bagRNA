@@ -58,11 +58,9 @@ bash download_databases_bagRNA.sh
 
 The following must be downloaded manually due to licensing:
 
-1) GeneMark-ETP https://github.com/gatech-genemark/GeneMark-ETP
-
-2) Phobius https://software.sbc.su.se/phobius.html
-
-3) SignalP 6.0 https://services.healthtech.dtu.dk/services/SignalP-6.0/  (Download the fast or slow-sequential models)
+1) [GeneMark-ETP](https://github.com/gatech-genemark/GeneMark-ETP)  
+2) [Phobius](https://software.sbc.su.se/phobius.html)  
+3) [SignalP 6.0](https://services.healthtech.dtu.dk/services/SignalP-6.0/)  (Download the fast or slow-sequential models)
 
 ### Running the pipeline
 
@@ -70,16 +68,16 @@ bagRNA arguments
 
 🗂 Required Inputs
 
-| Argument                | Description                                             | Tips                                                                            | 
-| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------- |  
-| `--input_fasta`         | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand                                   |
-| `--prot_evidence`       | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                    |                               
-| `--busco_lineage`       | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                  |
-| `--Conditions`          | STAR manifest TSV file(s)                               | Check the example in the repository                                             |  
-| `--mikado_config`       | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/) |
-| `--scoring`             | Mikado scoring config (e.g., `scerevisiae.yaml`)        |                                                                                 |
-| `--species`             | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) |                                                                                 |
-| `--submission_template` | `.sbt` file for GenBank submission                      |                                                                                 |
+| Argument                | Description                                             | Tips                                                                                          | 
+| ----------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |  
+| `--input_fasta`         | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand                                                 |
+| `--prot_evidence`       | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                  |                               
+| `--busco_lineage`       | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                |
+| `--Conditions`          | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)|  
+| `--mikado_config`       | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)               |
+| `--scoring`             | Mikado scoring config (e.g., `scerevisiae.yaml`)        | Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/) |                                                                       
+| `--species`             | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) |                                                                                               |
+| `--submission_template` | `.sbt` file for GenBank submission                      | Check the example in the repository                                                           |
 
 🧠 Choose one of the two following options 
 
