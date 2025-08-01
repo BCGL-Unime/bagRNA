@@ -66,7 +66,7 @@ The following must be downloaded manually due to licensing:
 
 ### Running the pipeline
 
-bagRNA <arguments>
+bagRNA arguments
 
 🗂 Required Inputs
 
@@ -123,9 +123,12 @@ bagRNA <arguments>
 
 👤 Author
 
-Gabriele Rigano,
-Bioinformatics and Computational Genomics LAB,
-University of Messina,Sicily,Italy,
+Gabriele Rigano
+
+Bioinformatics and Computational Genomics LAB
+
+University of Messina,Sicily,Italy
+
 📧 gabrielerigano99@gmail.com
 
 Citing
