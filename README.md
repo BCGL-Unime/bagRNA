@@ -74,12 +74,31 @@ The following must be downloaded manually due to licensing:
 ### Running the pipeline
 ## 🧪 Real Usage Example
 ```bash
-bagRNA.sh --mikado_config ../mikado_config.tsv --busco_lineage sordariomycetes --Helixer_gff helixer_SS02.fasta.gff --input_fasta maskedSS02.fa
---locus_tag SS02 --Conditions ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv --RAM_limit_Trinity 45G --limitBAMsortRAM 4571838164
---orientation RF --strandedness secondstrand --max_intron_length 3000 --threads 12 --prot_evidence ../SSref_prot_and_evidence.faa
---species "Sporothrix_schenckii" --strain SS02 --codon_table 1 --scoring scerevisiae.yaml --lifted_annotation lifted_ren_SS02.fasta.gff
---databases /home/gab/databases_bagRNA/ --submission_template /home/gab/tools/submission_template.sbt --no_tmbed
---GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip --max_gene_length 30000
+bagRNA.sh \
+  --mikado_config ../mikado_config.tsv \
+  --busco_lineage sordariomycetes \
+  --Helixer_gff helixer_SS02.fasta.gff \
+  --input_fasta maskedSS02.fa \
+  --locus_tag SS02 \
+  --Conditions ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv \
+  --RAM_limit_Trinity 45G \
+  --limitBAMsortRAM 4571838164 \
+  --orientation RF \
+  --strandedness secondstrand \
+  --max_intron_length 3000 \
+  --threads 12 \
+  --prot_evidence ../SSref_prot_and_evidence.faa \
+  --species "Sporothrix_schenckii" \
+  --strain SS02 \
+  --codon_table 1 \
+  --scoring scerevisiae.yaml \
+  --lifted_annotation lifted_ren_SS02.fasta.gff \
+  --databases /home/gab/databases_bagRNA/ \
+  --submission_template /home/gab/tools/submission_template.sbt \
+  --no_tmbed \
+  --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ \
+  --jaccard_clip \
+  --max_gene_length 30000
 ```
 🗂 Required Inputs
 
