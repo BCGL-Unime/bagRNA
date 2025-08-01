@@ -97,27 +97,27 @@ bagRNA arguments
 
 📥 Optional Inputs
 
-| Argument                                | Description                             | Tips and specifics                                                               |
+| Argument              | Description                             | Tips and specifics                                                                                                                             |
 | --------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `  --lifted_annotation` | Liftoff/Lifton GFF annotation           | Lift a reference annotation to your genome assembly and provide it as evidence. [Lifton](https://github.com/Kuanhao-Chao/LiftOn) works well    |
+| `--lifted_annotation` | Liftoff/Lifton GFF annotation           | Lift a reference annotation to your genome assembly and provide it as evidence. [Lifton](https://github.com/Kuanhao-Chao/LiftOn) works well    |
 | `--GeneMark_PATH`     | Path to GeneMarK-ET/ETP executable      | Provide the absolute path of your GeneMark installation where the "gmes_petap.pl" executable is located /home/bag/tools/GeneMark-ETP/bin/gmes/ |
 | `--databases`         | Path to functional annotation databases | Provide the absolute path to where you downloaded the databases with the script "download_databases_bagRNA.sh"                                 |
 
 ⚙️ Performance / Misc
 
-| Argument              | Default    | Description                                | Tips and specifics                                                                                             |
-| --------------------- | ---------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `--threads`, `-t`     | `1`        | Number of CPU threads                      | Number of CPU threads you want to use, try not to use them all, as your system may crash                       |
-| `--jaccard_clip`      | *(on)*     | Enable for high gene density               | Use this flag if you are expecting high gene density with UTR overlap, recommended for fungi                   |
-| `--max_gene_length`   | `30000`    | Max length of gene models                  | Check the longest gene in your organism or closely related and set around that length as cut-off               |
-| `--RAM_limit_Trinity` | `45G`      | Max RAM for Trinity                        | Max RAM for Trinity transcript assembly                                                                        |
-| `--limitBAMsortRAM`   | `41232313` | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
-| `--orientation`       | `RF`       | Read orientation (`FR`, `RF`, etc.)        | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
-| `--strandedness`      | `secondstrand`| Strand type (e.g., `secondstrand`)      | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
-| `--max_intron_length` | `3000`     | Max intron size                            | Check the longest intron in your organism or closely related and set around that length as cut-off             |
-| `--codon_table`       | `1`        | NCBI codon table ID                        | Check the codon tables [here](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)                        |
-| `--strain`            | `strain` | Strain/isolate name                        | Assign a strain or isolate name                                                                                |
-| `--locus_tag`         | `bagRNA` | Locus tag prefix                           | Locus tag prefix, [here](https://www.ddbj.nig.ac.jp/ddbj/locus_tag-e.html) the specifications                  |
+| Argument              | Default        | Description                                | Tips and specifics |                                                                                            
+| --------------------- | -------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `--threads`, `-t`     | `1`            | Number of CPU threads                      | Number of CPU threads you want to use, try not to use them all, as your system may crash                       |
+| `--jaccard_clip`      | *(on)*         | Enable for high gene density               | Use this flag if you are expecting high gene density with UTR overlap, recommended for fungi                   |
+| `--max_gene_length`   | `30000`        | Max length of gene models                  | Check the longest gene in your organism or closely related and set around that length as cut-off               |
+| `--RAM_limit_Trinity` | `45G`          | Max RAM for Trinity                        | Max RAM for Trinity transcript assembly                                                                        |
+| `--limitBAMsortRAM`   | `41232313`     | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
+| `--orientation`       | `RF`           | Read orientation (`FR`, `RF`, etc.)        | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
+| `--strandedness`      | `secondstrand` | Strand type (e.g., `secondstrand`)      | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness    |
+| `--max_intron_length` | `3000`         | Max intron size                            | Check the longest intron in your organism or closely related and set around that length as cut-off             |
+| `--codon_table`       | `1`            | NCBI codon table ID                        | Check the codon tables [here](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)                        |
+| `--strain`            | `strain`       | Strain/isolate name                        | Assign a strain or isolate name                                                                                |
+| `--locus_tag`         | `bagRNA`       | Locus tag prefix                           | Locus tag prefix, [here](https://www.ddbj.nig.ac.jp/ddbj/locus_tag-e.html) the specifications                  |
 
 🔌 Disable Specific Modules
 
