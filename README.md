@@ -1,7 +1,9 @@
 # bagRNA
 The bagRNA pipeline is an exhaustive utility developed for the genome annotation of eukaryotic organisms which does not require extensive expertise in computational biology from the user.
-It is ncRNA-aware, meaning that it retains all the information of non-coding sequences present in sequencing reads, integrating them in the final gff3 annotation file and renames the ncRNA feature by its predicted biological function (lncRNA, tRNA, rRNA etc.). This pipeline integrates _ab initio_ prediction, transcript alignment and homology-based approaches. The modular workflow requires minimal file input - only a genome assembly, protein evidence and RNA-seq reads - and integrates
-essential bioinformatics processes such as transcriptome assembly, gene model selection and correction, and structural annotation, and functional annotation all in one go.
+It is ncRNA-aware, meaning that it retains all the information of non-coding sequences present in sequencing reads, integrating them in the final gff3 annotation file and renames the ncRNA
+feature by its predicted biological function (lncRNA, tRNA, rRNA etc.). This pipeline integrates _ab initio_ prediction, transcript alignment and homology-based approaches. 
+The modular workflow requires minimal file input - only a genome assembly, protein evidence and RNA-seq reads - and integrates essential bioinformatics processes such as transcriptome assembly,
+gene model selection and correction, and structural annotation, and functional annotation all in one go.
 
 # Pipeline
 Briefly, the pipeline consists of 5 main modules: 
