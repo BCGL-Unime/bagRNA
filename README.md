@@ -99,5 +99,15 @@ Performance and Miscellaneous options:
   --no_functional_anno         Use this flag if you do NOT wish to run functional annotation (default: runs functional annotation)
   --no_antismash               Use this flag if you do NOT wish to run AntiSMASH (default: runs AntiSMASH)
   --no_tmbed                   Use this flag if you do NOT wish to run Tmbed (default: runs Tmbed)
+| Argument                | Description                                             |
+| ----------------------- | ------------------------------------------------------- |
+| `--input_fasta`         | Genome FASTA file (preferably softmasked)               |
+| `--prot_evidence`       | Protein evidence in FASTA format                        |
+| `--busco_lineage`       | BUSCO lineage (e.g., `sordariomycetes`)                 |
+| `--Conditions`          | STAR manifest TSV file(s)                               |
+| `--mikado_config`       | Mikado configuration YAML file                          |
+| `--scoring`             | Mikado scoring config (e.g., `scerevisiae.yaml`)        |
+| `--species`             | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) |
+| `--submission_template` | `.sbt` file for GenBank submission                      |
 
 
