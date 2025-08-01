@@ -76,7 +76,7 @@ bagRNA arguments
 | `--Conditions`                            | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
 | `--mikado_config`                         | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
 | `--scoring`                               | Mikado scoring config (e.g., `scerevisiae.yaml`)        | Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)                                   |
-| `--submission\_template`                   | `.sbt` file for GenBank submission               | Check the example in the repository                                                                                             |
+| `--submission\_template`                   | `.sbt` file for GenBank submission               | Check the example in the repository                                                                                                   |
 | `--species`                               | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
 
 🧠 Choose one of the two following options 
