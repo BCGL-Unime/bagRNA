@@ -77,7 +77,7 @@ bagRNA arguments
 
 🗂 Required Inputs
 
-| Argument                                                              | Description                                             | Tips and specifics                                     |          
+| Argument                                  | Description                                             | Tips and specifics                                                                                                              |
 | ----------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `--input_fasta`                           | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
 | `--prot_evidence`                         | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
@@ -105,7 +105,7 @@ bagRNA arguments
 
 ⚙️ Performance / Misc
 
-| Argument              | Default        | Description                                | Tips and specifics |                                                                                            
+| Argument              | Default        | Description                                | Tips and specifics                                                                                             |
 | --------------------- | -------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | `--threads`, `-t`     | `1`            | Number of CPU threads                      | Number of CPU threads you want to use, try not to use them all, as your system may crash                       |
 | `--jaccard_clip`      | *(on)*         | Enable for high gene density               | Use this flag if you are expecting high gene density with UTR overlap, recommended for fungi                   |
@@ -113,7 +113,7 @@ bagRNA arguments
 | `--RAM_limit_Trinity` | `45G`          | Max RAM for Trinity                        | Max RAM for Trinity transcript assembly                                                                        |
 | `--limitBAMsortRAM`   | `41232313`     | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
 | `--orientation`       | `RF`           | Read orientation (`FR`, `RF`, etc.)        | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
-| `--strandedness`      | `secondstrand` | Strand type (e.g., `secondstrand`)      | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness    |
+| `--strandedness`      | `secondstrand` | Strand type (e.g., `secondstrand`)         | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
 | `--max_intron_length` | `3000`         | Max intron size                            | Check the longest intron in your organism or closely related and set around that length as cut-off             |
 | `--codon_table`       | `1`            | NCBI codon table ID                        | Check the codon tables [here](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)                        |
 | `--strain`            | `strain`       | Strain/isolate name                        | Assign a strain or isolate name                                                                                |
@@ -127,5 +127,5 @@ bagRNA arguments
 | `--no_antismash`       | Skip AntiSMASH             | Skips Secondary Metabolite clusters prediction (fungi only)                                                      |
 | `--no_tmbed`           | Skip Tmbed                 | Tmbed is very fast on GPU but very slow on CPU, use this flag if your machine does not have a performing GPU     |
 
-Citing
+How to Cite
 Work in progress...
