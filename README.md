@@ -122,10 +122,10 @@ bagRNA <arguments>
 
 👤 Author
 
-Gabriele Rigano
-Bioinformatics and Computational Genomics LAB
-University of Messina
+Gabriele Rigano,
+Bioinformatics and Computational Genomics LAB,
+University of Messina,Sicily,Italy,
 📧 gabrielerigano99@gmail.com
 
-Cite
-In progress...
+Citing
+Work in progress...
