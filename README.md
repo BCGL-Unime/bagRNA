@@ -72,8 +72,8 @@ The following must be downloaded manually due to licensing:
 3) [SignalP 6.0](https://services.healthtech.dtu.dk/services/SignalP-6.0/)  (Download the fast or slow-sequential models)
 
 ### Running the pipeline
-
-bagRNA arguments
+Real usage example
+bagRNA.sh --mikado_config ../mikado_config.tsv --busco_lineage sordariomycetes --Helixer_gff helixer_SS02.fasta.gff --input_fasta maskedSS02.fa --locus_tag SS02 --Conditions ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv --RAM_limit_Trinity 45G --limitBAMsortRAM 4571838164 --orientation RF --strandedness secondstrand --max_intron_length 3000 --threads 12 --prot_evidence ../SSref_prot_and_evidence.faa --species "Sporothrix_schenckii" --strain SS02 --codon_table 1 --scoring scerevisiae.yaml --lifted_annotation lifted_ren_SS02.fasta.gff --databases /home/gab/databases_bagRNA/ --submission_template /home/gab/tools/submission_template.sbt --no_tmbed --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip --max_gene_length 30000
 
 🗂 Required Inputs
 
@@ -100,7 +100,7 @@ bagRNA arguments
 | Argument              | Description                             | Tips and specifics                                                                                                                             |
 | --------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--lifted_annotation` | Liftoff/Lifton GFF annotation           | Lift a reference annotation to your genome assembly and provide it as evidence. [Lifton](https://github.com/Kuanhao-Chao/LiftOn) works well    |
-| `--GeneMark_PATH`     | Path to GeneMarK-ET/ETP executable      | Provide the absolute path of your GeneMark installation where the "gmes_petap.pl" executable is located /home/bag/tools/GeneMark-ETP/bin/gmes/ |
+| `--GeneMark_PATH`     | Path to GeneMarK-ET/ETP executable      | Provide the absolute path of your GeneMark installation where the "gmes_petap.pl" executable is located /home/bag/tools/GeneMark-ETP/          |
 | `--databases`         | Path to functional annotation databases | Provide the absolute path to where you downloaded the databases with the script "download_databases_bagRNA.sh"                                 |
 
 ⚙️ Performance / Misc
@@ -111,7 +111,7 @@ bagRNA arguments
 | `--jaccard_clip`      | *(on)*         | Enable for high gene density               | Use this flag if you are expecting high gene density with UTR overlap, recommended for fungi                   |
 | `--max_gene_length`   | `30000`        | Max length of gene models                  | Check the longest gene in your organism or closely related and set around that length as cut-off               |
 | `--RAM_limit_Trinity` | `45G`          | Max RAM for Trinity                        | Max RAM for Trinity transcript assembly                                                                        |
-| `--limitBAMsortRAM`   | `41232313`     | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
+| `--limitBAMsortRAM`   | `4571838164`   | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
 | `--orientation`       | `RF`           | Read orientation (`FR`, `RF`, etc.)        | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
 | `--strandedness`      | `secondstrand` | Strand type (e.g., `secondstrand`)         | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
 | `--max_intron_length` | `3000`         | Max intron size                            | Check the longest intron in your organism or closely related and set around that length as cut-off             |
