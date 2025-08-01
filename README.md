@@ -11,6 +11,12 @@ The pipeline integrates:
 
 It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating this into the final annotation.
 
+👤 Author
+Gabriele Rigano
+Bioinformatics and Computational Genomics LAB
+University of Messina, Sicily, Italy
+📧 gabrielerigano99@gmail.com
+
 ## 📌 Features
 
 - **ncRNA-aware**: Retains and classifies non-coding features
@@ -69,7 +75,7 @@ bagRNA arguments
 🗂 Required Inputs
 
 | Argument                                  | Description                                             | Tips and specifics                                                                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| ----------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `--input_fasta`                           | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
 | `--prot_evidence`                         | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
 | `--busco_lineage`                         | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
@@ -84,50 +90,39 @@ bagRNA arguments
 | Argument                                  | Description                                              | Tips and specifics                                                                        |
 | ----------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------  |
 | `--helixer_lineage`                       | Choose among fungi, land_plant, vertebrate, invertebrate | Requires prior GPU and NVIDIA Container Toolkit configuration                             |
-| `--Helixer_gff`                           | Use precomputed Helixer GFF                              | Run Helixer [here](https://www.plabipd.de/helixer_main.html) and provide the GFF as input | 
+| `--Helixer_gff`                           | Use precomputed Helixer GFF                              | Run Helixer [here](https://www.plabipd.de/helixer_main.html) and provide the GFF as input |
 
 📥 Optional Inputs
 
-| Argument              | Description                             | Tips and specifics |
-| --------------------- | --------------------------------------- | ------------------ |
-| `--lifted_annotation` | Liftoff/Lifton GFF annotation           |
-| `--GeneMark_PATH`     | Path to GeneMark executable             |
-| `--databases`         | Path to functional annotation databases |
+| Argument              | Description                             | Tips and specifics                                                                                                                             |
+| --------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--lifted_annotation` | Liftoff/Lifton GFF annotation           | Lift a reference annotation to your genome assembly and provide it as evidence. [Lifton](https://github.com/Kuanhao-Chao/LiftOn) works well    |
+| `--GeneMark_PATH`     | Path to GeneMarK-ET/ETP executable      | Provide the absolute path of your GeneMark installation where the "gmes_petap.pl" executable is located /home/bag/tools/GeneMark-ETP/bin/gmes/ |
+| `--databases`         | Path to functional annotation databases | Provide the absolute path to where you downloaded the databases with the script "download_databases_bagRNA.sh"                                 |
 
 ⚙️ Performance / Misc
 
-| Argument              | Default    | Description                                |
-| --------------------- | ---------- | ------------------------------------------ |
-| `--threads`, `-t`     | `20`       | Number of CPU threads                      |
-| `--jaccard_clip`      | *(on)*     | Enable for high gene density (e.g., fungi) |
-| `--max_gene_length`   | -          | Max length of gene models                  |
-| `--RAM_limit_Trinity` | `45G`      | RAM for Trinity                            |
-| `--limitBAMsortRAM`   | -          | STAR BAM sort RAM limit                    |
-| `--orientation`       | -          | Read orientation (`FR`, `RF`, etc.)        |
-| `--strandedness`      | -          | Strand type (e.g., `secondstrand`)         |
-| `--max_intron_length` | `3000`     | Max intron size                            |
-| `--codon_table`       | `1`        | NCBI codon table ID                        |
-| `--strain`            | `"strain"` | Strain/isolate name                        |
-| `--locus_tag`         | `"bagRNA"` | Locus tag prefix                           |
+| Argument              | Default    | Description                                | Tips and specifics                                                                                             |
+| --------------------- | ---------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `--threads`, `-t`     | `1`        | Number of CPU threads                      | Number of CPU threads you want to use, try not to use them all, as your system may crash                       |
+| `--jaccard_clip`      | *(on)*     | Enable for high gene density               | Use this flag if you are expecting high gene density with UTR overlap, recommended for fungi                   |
+| `--max_gene_length`   | -          | Max length of gene models                  | Check the longest gene in your organism or closely related and set around that length as cut-off               |
+| `--RAM_limit_Trinity` | `45G`      | Max RAM for Trinity                        | Max RAM for Trinity transcript assembly                                                                        |
+| `--limitBAMsortRAM`   | -          | STAR BAM sort RAM limit                    | Max RAM for STAR BAM sorting                                                                                   |
+| `--orientation`       | -          | Read orientation (`FR`, `RF`, etc.)        | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
+| `--strandedness`      | -          | Strand type (e.g., `secondstrand`)         | Check this [tutorial](https://chipster.csc.fi/manual/library-type-summary.html) for understanding strandedness |
+| `--max_intron_length` | `3000`     | Max intron size                            | Check the longest intron in your organism or closely related and set around that length as cut-off             |
+| `--codon_table`       | `1`        | NCBI codon table ID                        | Check the codon tables [here](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)                        |
+| `--strain`            | `"strain"` | Strain/isolate name                        | Assign a strain or isolate name                                                                                |
+| `--locus_tag`         | `"bagRNA"` | Locus tag prefix                           | Locus tag prefix, [here](https://www.ddbj.nig.ac.jp/ddbj/locus_tag-e.html) the specifications                  |
 
 🔌 Disable Specific Modules
 
-| Argument               | Description                |
-| ---------------------- | -------------------------- |
-| `--no_functional_anno` | Skip functional annotation |
-| `--no_antismash`       | Skip AntiSMASH             |
-| `--no_tmbed`           | Skip Tmbed                 |
-
-
-👤 Author
-
-Gabriele Rigano
-
-Bioinformatics and Computational Genomics LAB
-
-University of Messina,Sicily,Italy
-
-📧 gabrielerigano99@gmail.com
+| Argument               | Description                | Tips and specifics                                                                                               |
+| ---------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `--no_functional_anno` | Skip functional annotation | Skips InterProScan  EggNOG  KOfamscan, Infernal, Signalp6, Phobius, Tmbed, AntiSMASH                             |
+| `--no_antismash`       | Skip AntiSMASH             | Skips Secondary Metabolite clusters prediction (fungi only)                                                      |
+| `--no_tmbed`           | Skip Tmbed                 | Tmbed is very fast on GPU but very slow on CPU, use this flag if your machine does not have a performing GPU     |
 
 Citing
 Work in progress...
