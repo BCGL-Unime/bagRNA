@@ -70,16 +70,16 @@ bagRNA arguments
 
 🗂 Required Inputs
 
-| Argument                | Description                                             |
-| ----------------------- | ------------------------------------------------------- |
-| `--input_fasta`         | Genome FASTA file (preferably softmasked)               |
-| `--prot_evidence`       | Protein evidence in FASTA format                        |
-| `--busco_lineage`       | BUSCO lineage (e.g., `sordariomycetes`)                 |
-| `--Conditions`          | STAR manifest TSV file(s)                               |
-| `--mikado_config`       | Mikado configuration YAML file                          |
-| `--scoring`             | Mikado scoring config (e.g., `scerevisiae.yaml`)        |
-| `--species`             | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) |
-| `--submission_template` | `.sbt` file for GenBank submission                      |
+| Argument                | Description                                             | Tips                                                                            | 
+| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------- |  
+| `--input_fasta`         | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand                                   |
+| `--prot_evidence`       | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                    |                               
+| `--busco_lineage`       | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                  |
+| `--Conditions`          | STAR manifest TSV file(s)                               | Check the example in the repository                                             |  
+| `--mikado_config`       | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/) |
+| `--scoring`             | Mikado scoring config (e.g., `scerevisiae.yaml`)        |                                                                                 |
+| `--species`             | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) |                                                                                 |
+| `--submission_template` | `.sbt` file for GenBank submission                      |                                                                                 |
 
 🧠 Choose one of the two following options 
 
