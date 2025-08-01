@@ -12,9 +12,12 @@ The pipeline integrates:
 It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating this into the final annotation.
 
 👤 Author
-Gabriele Rigano
+**Gabriele Rigano**
+
 Bioinformatics and Computational Genomics LAB
+
 University of Messina, Sicily, Italy
+
 📧 gabrielerigano99@gmail.com
 
 ## 📌 Features
