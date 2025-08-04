@@ -9,7 +9,7 @@ The pipeline integrates:
 - transcript alignment
 - homology-based annotation
 
-It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating this into the final annotation.
+It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating it into the final annotation.
 
 👤 Author
 **Gabriele Rigano**
@@ -63,9 +63,9 @@ chmod +x download_databases_bagRNA.sh
 bash download_databases_bagRNA.sh
 ```
 
-⚠️ Optional (But Recommended) Tools
+⚠️ Tools to be manually dowloaded by the user
 
-The following must be downloaded manually due to licensing:
+The following must be downloaded manually due to licensing restrictions:
 
 1) [GeneMark-ETP](https://github.com/gatech-genemark/GeneMark-ETP)  
 2) [Phobius](https://software.sbc.su.se/phobius.html)  
