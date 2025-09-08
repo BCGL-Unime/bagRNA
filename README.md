@@ -77,7 +77,7 @@ The following must be downloaded manually due to licensing restrictions:
 bagRNA.sh \
   --mikado_config ../mikado_config.tsv --busco_lineage sordariomycetes \
   --Helixer_gff helixer_SS02.fasta.gff --input_fasta maskedSS02.fa \
-  --locus_tag SS02 --Conditions ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv \
+  --locus_tag SS02 --STAR_manifest ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv \
   --RAM_limit_Trinity 45G --limitBAMsortRAM 4571838164 \
   --orientation RF --strandedness secondstrand --databases /home/gab/databases_bagRNA/ \
   --max_intron_length 3000 --threads 12 --max_gene_length 30000 \
@@ -94,7 +94,7 @@ bagRNA.sh \
 | `--input_fasta`                           | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
 | `--prot_evidence`                         | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
 | `--busco_lineage`                         | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
-| `--Conditions`                            | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
+| `--STAR_manifest`                            | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
 | `--mikado_config`                         | Mikado configuration YAML file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
 | `--scoring`                               | Mikado scoring config (e.g., `scerevisiae.yaml`)        | Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)                                   |
 | `--submission_template`                   | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
@@ -104,7 +104,7 @@ bagRNA.sh \
 
 | Argument                                  | Description                                              | Tips and specifics                                                                        |
 | ----------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------  |
-| `--helixer_lineage`                       | Choose among fungi, land_plant, vertebrate, invertebrate | Requires prior GPU and NVIDIA Container Toolkit configuration                             |
+| `--Helixer_lineage`                       | Choose among fungi, land_plant, vertebrate, invertebrate | Requires prior GPU and NVIDIA Container Toolkit configuration                             |
 | `--Helixer_gff`                           | Use precomputed Helixer GFF                              | Run Helixer [here](https://www.plabipd.de/helixer_main.html) and provide the GFF as input |
 
 📥 Optional Inputs
