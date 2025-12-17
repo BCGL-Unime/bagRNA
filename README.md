@@ -96,7 +96,7 @@ bagRNA.sh \
 | `--prot_evidence`        | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
 | `--busco_lineage`        | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
 | `--STAR_manifest`        | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
-| `--mikado_config`        | Mikado configuration tsv file                           | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
+| `--mikado_config`        | Mikado configuration tsv file                           | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/), don't change names in column 1                 |
 | `--scoring`              | Select a Mikado scoring config (e.g., `scerevisiae.yaml`, `plant.yaml`, `mammalian.yaml`)| Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)  |
 | `--submission_template`  | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
 | `--species`              | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
