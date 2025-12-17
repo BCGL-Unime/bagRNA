@@ -137,7 +137,7 @@ bagRNA.sh \
 
 | Argument               | Description                | Tips and specifics                                                                                               |
 | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `--no_functional_anno` | Skip functional annotation | Skips InterProScan  EggNOG  KOfamscan, Infernal, Signalp6, Phobius, Tmbed, EffectorP-3.0 AntiSMASH               |
+| `--no_functional_anno` | Skip functional annotation | Skips InterProScan  EggNOG  KOfamscan, Infernal, Signalp6, Phobius, Tmbed, EffectorP-3.0, AntiSMASH              |
 | `--no_effectorp3`      | Skip EffectorP-3.0         | Skips apoplastic and cytoplasmic effectors prediction                                                            |
 | `--no_antismash`       | Skip AntiSMASH             | Skips Secondary Metabolite clusters prediction (fungi only)                                                      |
 | `--no_tmbed`           | Skip Tmbed                 | Tmbed is very fast on GPU but very slow on CPU, use this flag if your machine does not have a performing GPU     |
