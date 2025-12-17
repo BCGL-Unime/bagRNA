@@ -2,7 +2,7 @@
 **bagRNA** is a user-friendly ncRNA-aware genome annotation pipeline for eukaryotic organisms. It is designed to predict, correct, classify and assign function to gene models, all in one go!
 
 Take a look at all the steps !
-![bagRNA pipeline](bagRNA_pipeline.png)
+![bagRNA pipeline](bagRNA.png)
 
 The pipeline integrates:
 - _ab initio_ prediction
@@ -11,14 +11,14 @@ The pipeline integrates:
 
 It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating it into the final annotation.
 
-👤 Author
+👤 Main Developer
 **Gabriele Rigano**
 
 Bioinformatics and Computational Genomics LAB
 
 University of Messina, Sicily, Italy
 
-📧 gabrielerigano99@gmail.com
+📧 gabriele.rigano@unitn.it
 
 ## 📌 Features
 
@@ -75,30 +75,30 @@ The following must be downloaded manually due to licensing restrictions:
 ## 🧪 Real Usage Example
 ```bash
 bagRNA.sh \
-  --mikado_config ../mikado_config.tsv --busco_lineage sordariomycetes \
+  --mikado_config mikado_config.tsv --busco_lineage sordariomycetes \
   --Helixer_gff helixer_SS02.fasta.gff --input_fasta maskedSS02.fa \
-  --locus_tag SS02 --STAR_manifest ../mold_reads_for_STAR.tsv ../yeast_reads_for_STAR.tsv \
+  --locus_tag SS02 --STAR_manifest mold_reads_for_STAR.tsv yeast_reads_for_STAR.tsv \
   --RAM_limit_Trinity 45G --limitBAMsortRAM 4571838164 \
   --orientation RF --strandedness secondstrand --databases /home/gab/databases_bagRNA/ \
   --max_intron_length 3000 --threads 12 --max_gene_length 30000 \
-  --prot_evidence ../SSref_prot_and_evidence.faa --species "Sporothrix_schenckii" \
+  --prot_evidence SSref_prot_and_evidence.faa --species "Sporothrix_schenckii" \
   --strain SS02 --codon_table 1 --scoring scerevisiae.yaml \
   --lifted_annotation lifted_ren_SS02.fasta.gff  \
   --submission_template /home/gab/tools/submission_template.sbt --no_tmbed \
-  --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip \
+  --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip
 ```
 🗂 Required Inputs
 
-| Argument                                  | Description                                             | Tips and specifics                                                                                                              |
-| ----------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `--input_fasta`                           | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
-| `--prot_evidence`                         | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
-| `--busco_lineage`                         | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
-| `--STAR_manifest`                            | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
-| `--mikado_config`                         | Mikado configuration tsv file                          | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
-| `--scoring`                               | Mikado scoring config (e.g., `scerevisiae.yaml`)        | Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)                                   |
-| `--submission_template`                   | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
-| `--species`                               | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
+| Argument                 | Description                                             | Tips and specifics                                                                                                              |
+| ------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `--input_fasta`          | Genome FASTA file (preferably softmasked)               | Run EarlGrey or EDTA TE prediction beforehand and get a softmasked assembly; remove mitochondrial/plastidial contigs            |
+| `--prot_evidence`        | Protein evidence in FASTA format                        | Download proteins of your taxon from UniProt                                                                                    |
+| `--busco_lineage`        | BUSCO lineage (e.g., `sordariomycetes`)                 | Use the phylogenetically lowest taxon possible                                                                                  |
+| `--STAR_manifest`        | STAR manifest TSV file(s)                               | Check the example in the repository and the [docs](https://raw.githubusercontent.com/alexdobin/STAR/master/doc/STARmanual.pdf)  |
+| `--mikado_config`        | Mikado configuration tsv file                           | Check the example and [docs](https://mikado.readthedocs.io/en/stable/Tutorial/)                                                 |
+| `--scoring`              | Select a Mikado scoring config (e.g., `scerevisiae.yaml`, `plant.yaml`, `mammalian.yaml`)| Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)  |
+| `--submission_template`  | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
+| `--species`              | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
 
 🧠 Choose one of the two following options 
 
@@ -135,7 +135,8 @@ bagRNA.sh \
 
 | Argument               | Description                | Tips and specifics                                                                                               |
 | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `--no_functional_anno` | Skip functional annotation | Skips InterProScan  EggNOG  KOfamscan, Infernal, Signalp6, Phobius, Tmbed, AntiSMASH                             |
+| `--no_functional_anno` | Skip functional annotation | Skips InterProScan  EggNOG  KOfamscan, Infernal, Signalp6, Phobius, Tmbed, EffectorP-3.0 AntiSMASH               |
+| `--no_effectorp3`      | Skip EffectorP-3.0         | Skips apoplastic and cytoplasmic effectors prediction                                                            |
 | `--no_antismash`       | Skip AntiSMASH             | Skips Secondary Metabolite clusters prediction (fungi only)                                                      |
 | `--no_tmbed`           | Skip Tmbed                 | Tmbed is very fast on GPU but very slow on CPU, use this flag if your machine does not have a performing GPU     |
 
