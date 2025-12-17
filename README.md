@@ -100,7 +100,7 @@ bagRNA.sh \
 | `--scoring`              | Select a Mikado scoring config (e.g., `scerevisiae.yaml`, `plant.yaml`, `mammalian.yaml`)| Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)  |
 | `--submission_template`  | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
 | `--species`              | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
-| `--GeneMark_PATH`        | Path to phobius.pl executable                           | Provide the absolute path of your phobius installation where the "phobius.pl" executable is located /home/gab/tools/phobius/    |
+| `--phobius_PATH`         | Path to phobius.pl executable                           | Provide the absolute path of your phobius installation where the "phobius.pl" executable is located /home/gab/tools/phobius/    |
 
 🧠 Choose one of the two following options 
 
