@@ -85,7 +85,8 @@ bagRNA.sh \
   --strain SS02 --codon_table 1 --scoring scerevisiae.yaml \
   --lifted_annotation lifted_ren_SS02.fasta.gff  \
   --submission_template /home/gab/tools/submission_template.sbt --no_tmbed \
-  --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip
+  --GeneMark_PATH /home/gab/tools/GeneMark-ETP/ --jaccard_clip \
+  --phobius_PATH /home/gab/tools/phobius/
 ```
 🗂 Required Inputs
 
@@ -99,6 +100,7 @@ bagRNA.sh \
 | `--scoring`              | Select a Mikado scoring config (e.g., `scerevisiae.yaml`, `plant.yaml`, `mammalian.yaml`)| Check the tutorial [here](https://mikado.readthedocs.io/en/stable/Tutorial/Scoring_tutorial/)  |
 | `--submission_template`  | `.sbt` file for GenBank submission                      | Check the example in the repository                                                                                             |
 | `--species`              | Species name in quotes (e.g., `"Arabidopsis_thaliana"`) | Must be written in quotes with underscores instead of spaces                                                                    |
+| `--GeneMark_PATH`        | Path to phobius.pl executable                           | Provide the absolute path of your phobius installation where the "phobius.pl" executable is located /home/gab/tools/phobius/    |
 
 🧠 Choose one of the two following options 
 
