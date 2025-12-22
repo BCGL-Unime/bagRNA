@@ -1,9 +1,6 @@
 ![bagRNA_logo](BagRNA_logo.png)
 **bagRNA** is a user-friendly ncRNA-aware genome annotation pipeline for eukaryotic organisms. It is designed to predict, correct, classify and assign function to gene models, all in one go!
 
-Take a look at all the steps !
-![bagRNA pipeline](bagRNA.png)
-
 The pipeline integrates:
 - _ab initio_ prediction
 - transcript alignment
