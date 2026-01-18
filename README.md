@@ -8,6 +8,8 @@ The pipeline integrates:
 
 It identifies both **protein-coding** and **non-coding RNAs** (e.g., lncRNA, tRNA, rRNA), inferring biological function and incorporating it into the final annotation.
 
+![bagRNA_pipeline](bagRNA_pipeline.png)
+
 👤 Main Developer
 **Gabriele Rigano**
 
